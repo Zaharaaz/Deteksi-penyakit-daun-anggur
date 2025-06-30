@@ -399,7 +399,7 @@ else:
             except Exception as e:
                 st.error(f"Error loading image: {e}")
         else:
-            st.info("Silakan unggah gambar atau ambil foto untuk memulai deteksi.")
+            st.info("Silakan unggah gambar untuk memulai deteksi.")
 
 
     elif selected == "Riwayat":
