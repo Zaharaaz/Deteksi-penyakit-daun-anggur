@@ -131,6 +131,7 @@ def reg_user(username, password):
         return False
         
     try:
+         cursor = conn.cursor()
          # Create users table if not exists
         cursor.execute("""
             CREATE TABLE IF NOT EXISTS users (
@@ -141,7 +142,6 @@ def reg_user(username, password):
             )
         """)
         
-        cursor = conn.cursor()
         hashed_password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
         
         # Check if user already exists
