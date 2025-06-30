@@ -22,10 +22,10 @@ except mysql.connector.Error as err:
 # Database connection
 def get_db_connection():
     conn = mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="",
-        database="users_pi"    
+        host: ikabma.com port : 3306,
+        database : ikabmaco_users_pi,
+        username: ikabmaco_root,
+        password: $1?q15i0Ft[OA!56   
     )
     return conn
 
