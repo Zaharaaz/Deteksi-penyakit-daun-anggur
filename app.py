@@ -126,10 +126,21 @@ def save_mapping_owner(sample_id, owner_id):
 
 def reg_user(username, password):
     conn = get_db_connection()
+
     if not conn:
         return False
         
     try:
+         # Create users table if not exists
+        cursor.execute("""
+            CREATE TABLE IF NOT EXISTS users (
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                username VARCHAR(50) UNIQUE NOT NULL,
+                password VARCHAR(255) NOT NULL,
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            )
+        """)
+        
         cursor = conn.cursor()
         hashed_password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
         
@@ -140,17 +151,6 @@ def reg_user(username, password):
         if existing_user:
             return False
             
-        # Create users table if not exists
-        cursor.execute("""
-            CREATE TABLE IF NOT EXISTS users (
-                id INT AUTO_INCREMENT PRIMARY KEY,
-                username VARCHAR(50) UNIQUE NOT NULL,
-                password VARCHAR(255) NOT NULL,
-                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-            )
-        """)
-        
-
         # Insert new user
         cursor.execute("INSERT INTO user (username, password) VALUES (%s, %s)", (username, hashed_password))
         conn.commit()
