@@ -21,12 +21,14 @@ except mysql.connector.Error as err:
     st.stop()
 
 # Database connection
+# Database connection function
 def get_db_connection():
     conn = mysql.connector.connect(
-        host: ikabma.com port : 3306,
-        database : ikabmaco_users_pi,
-        username: ikabmaco_root,
-        password: $1?q15i0Ft[OA!56   
+        host="ikabma.com",
+        port=3306,
+        database="ikabmaco_users_pi",
+        user="ikabmaco_root",
+        password="$1?q15i0Ft[OA!56"
     )
     return conn
 
