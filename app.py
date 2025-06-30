@@ -132,6 +132,7 @@ def reg_user(username, password):
         
     try:
          cursor = conn.cursor()
+        
          # Create users table if not exists
         cursor.execute("""
             CREATE TABLE IF NOT EXISTS users (
@@ -140,7 +141,7 @@ def reg_user(username, password):
                 password VARCHAR(255) NOT NULL,
                 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
             )
-        """)
+    """)
         
         hashed_password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
         
