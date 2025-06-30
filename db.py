@@ -10,10 +10,11 @@ def hash_password(password):
 #---Connect to the database---
 try:
     mydb = mysql.connector.connect(
-        host: ikabma.com port : 3306,
-        database : ikabmaco_users_pi,
-        username: ikabmaco_root,
-        password: $1?q15i0Ft[OA!56
+        host="ikabma.com",          # Gunakan = dan tanda kutip
+        port=3306,                 # port adalah parameter terpisah dan berupa angka (integer)
+        database="ikabmaco_users_pi", # Gunakan = dan tanda kutip
+        user="ikabmaco_root",       # Parameter yang benar adalah 'user', bukan 'username'
+        password="$1?q15i0Ft[OA!56"  # Gunakan = dan tanda kutip
     )
 except mysql.connector.Error as err:
     st.error(f"Error: {err}")
