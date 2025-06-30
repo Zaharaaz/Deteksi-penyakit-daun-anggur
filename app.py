@@ -21,10 +21,10 @@ logging.basicConfig(level=logging.DEBUG)
 def get_db_connection():
     try:
         return mysql.connector.connect(
-            host="ikabma.com port : 3306",
-            user="ikabmaco_root",
-            password="$1?q15i0Ft[OA!56",
-            database="ikabmaco_users_pi"    
+            host: ikabma.com port : 3306,
+            database : ikabmaco_users_pi,
+            username: ikabmaco_root,
+            password: $1?q15i0Ft[OA!56   
         )
     except DBError as e:
         logging.error(f"Error connecting to database: {e}")
