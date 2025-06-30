@@ -132,9 +132,9 @@ def reg_user(username, password):
         
     try:
          cursor = conn.cursor()
-        
-         # Create users table if not exists
-        cursor.execute("""
+            
+            # Create table if not exists
+            cursor.execute("""
             CREATE TABLE IF NOT EXISTS users (
                 id INT AUTO_INCREMENT PRIMARY KEY,
                 username VARCHAR(50) UNIQUE NOT NULL,
