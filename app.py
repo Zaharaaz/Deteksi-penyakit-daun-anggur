@@ -41,7 +41,7 @@ def get_user(username):
             
         cursor = conn.cursor(dictionary=True)
         # Fixed SQL query - removed password parameter
-        cursor.execute("SELECT * FROM user WHERE username = %s", (username,))
+        cursor.execute("SELECT * FROM users WHERE username = %s", (username,))
         user = cursor.fetchone()
         logging.debug(f"Retrieved user: {user}")
         return user
@@ -153,7 +153,7 @@ def reg_user(username, password):
             return False
             
         # Insert new user
-        cursor.execute("INSERT INTO user (username, password) VALUES (%s, %s)", (username, hashed_password))
+        cursor.execute("INSERT INTO users (username, password) VALUES (%s, %s)", (username, hashed_password))
         conn.commit()
         return True
         
