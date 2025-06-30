@@ -131,7 +131,7 @@ def reg_user(username, password):
         return False
         
     try:
-         cursor = conn.cursor()
+             cursor = conn.cursor()
             
             # Create table if not exists
             cursor.execute("""
