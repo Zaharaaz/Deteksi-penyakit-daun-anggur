@@ -131,17 +131,17 @@ def reg_user(username, password):
         return False
         
     try:
-             cursor = conn.cursor()
+        cursor = conn.cursor()
             
-            # Create table if not exists
-            cursor.execute("""
-            CREATE TABLE IF NOT EXISTS users (
+        # Create table if not exists
+        cursor.execute("""
+        CREATE TABLE IF NOT EXISTS users (
                 id INT AUTO_INCREMENT PRIMARY KEY,
                 username VARCHAR(50) UNIQUE NOT NULL,
                 password VARCHAR(255) NOT NULL,
                 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-            )
-            """)
+        )
+        """)
         
         hashed_password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
         
