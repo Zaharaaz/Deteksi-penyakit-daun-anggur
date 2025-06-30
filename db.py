@@ -98,7 +98,7 @@ def masuk():
             hashed_password = hash_password(p)
             try:
                 mycursor = mydb.cursor()
-                mycursor.execute("SELECT * FROM user WHERE username = %s AND password = %s", (u, hashed_password))
+                mycursor.execute("SELECT * FROM users WHERE username = %s AND password = %s", (u, hashed_password))
                 user = mycursor.fetchone()
                 if user:
                     st.session_state['logged_in'] = True
