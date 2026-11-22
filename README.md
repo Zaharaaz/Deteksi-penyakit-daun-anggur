@@ -7,16 +7,18 @@ Model training, dataset, and experiments (YOLOv12 vs YOLOv12 + CBAM):
 [Grape-Leaf-Disease-Detection](https://github.com/Zaharaaz/Grape-Leaf-Disease-Detection)
 
 ## Features
-- Upload a grape leaf image and get the detected disease class,
-  bounding box, and confidence score
-- [Pilih model: YOLOv12 baseline / YOLOv12 + CBAM, hapus jika tidak ada]
-- [Tampilan perbandingan gambar asli vs hasil deteksi, jika ada]
+- **Home page:** explains the grape leaf diseases the model detects
+  (downy mildew, black rot) 
+- **Disease detection:** upload a grape leaf image and get the detected
+  disease class, bounding box, and confidence score
+- **Detection history:** past detection results are saved and can be
+  reviewed later as a history table
 
 ## Model
 - Architecture: YOLOv12 (Ultralytics), PyTorch
-- Detected classes: downy mildew, black rot [+ healthy, sesuaikan]
-- Performance: 81.9% mAP@0.5 (baseline YOLOv12) [pastikan jenis mAP]
-- Final model: baseline YOLOv12 (higher mAP than YOLOv12 + CBAM, 67.9%)
+- Detected classes: downy mildew, black rot or healthy
+- Performance: 81.9% mAP@0.5 (baseline YOLOv12)
+  
 
 ## Tech
 Python, PyTorch, Ultralytics YOLOv12, Streamlit
@@ -30,9 +32,10 @@ streamlit run app.py
 ```
 
 ## Demo
-![app screenshot](demo.png)
+![app screenshot](DA_2.png)
+![app screenshot](DA_5.png)
 
-[Live demo: link Streamlit Cloud, jika sudah di-deploy]
+[Live demo: ](https://deteksi-penyakit-daun-anggur.streamlit.app/)
 
 ## Notes
 This app is for educational and portfolio purposes and is not a
